@@ -14,6 +14,7 @@ function App() {
   const cRef = useRef(null)
   const hRef = useRef(null)
   async function generateResponse() {
+    if (!prompt.trim()) return
     cRef.current.style = 'display: flex'
     hRef.current.style = 'margin: 2rem'
     setMessage([
@@ -36,6 +37,12 @@ function App() {
     ])
     setPrompt('')
   }
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault()
+      generateResponse()
+    }
+  }
 
 
   return (
@@ -53,7 +60,7 @@ function App() {
           })
         }
         </div>
-        <TextArea onChange={(e)=>{setPrompt(e.target.value)}} onClick={generateResponse} value={prompt}/>
+        <TextArea onChange={(e)=>{setPrompt(e.target.value)}} onClick={generateResponse} value={prompt} onKeyDown={handleKeyPress}/>
       </div>
     </>
   )
