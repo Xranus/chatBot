@@ -1,0 +1,77 @@
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 60%;
+    border-radius: 18px;
+    backdrop-filter: blur(4px);
+    background-color: rgba(255, 255, 255, 0.151);
+    padding: 2rem;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    max-height: 400px;
+    overflow: scroll;
+}
+.heading{
+    text-align: center;
+    margin-top: 10rem;
+    color: beige;
+    transition: all 0.15s;
+}
+.prompt{
+    position: absolute;
+    bottom: 0;
+    color: black;
+    border-top: 1px solid beige;
+    width: 80%;
+    left: 10%;
+    margin-bottom: 10px;
+    display: flex;
+}
+.prompt textarea{
+    outline: none;
+    resize: none;
+    max-height: fit-content;
+    width: 90%;
+    background-color: transparent;
+    border: none;
+    color: beige;
+    padding: 12px 20px;
+}
+.prompt button{
+    border: none;
+    background-color: transparent;
+    color: beige;
+    font-size: large;
+    font-size: 30px;
+    width: 6%;
+}
+.userMsg{
+    background-color: black;
+    color: beige;
+    max-width: fit-content;
+    padding: 12px;
+    border-radius: 18px 0px 18px 18px;
+    margin: 12px;
+    align-self: flex-end;
+    
+}
+.responseMsg{
+    background-color: grey;
+    color: beige;
+    max-width: fit-content;
+    padding: 12px;
+    border-radius: 0px 18px 18px 18px;
+    margin: 12px;
+}
+
+@media (max-width: 600px) {
+    .prompt textarea{
+        padding: 12px 1px;
+    }
+    .container{
+        width: 300px;
+    }
+}

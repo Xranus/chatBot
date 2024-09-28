@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+body{
+    background-image: url('https://blog.1a23.com/wp-content/uploads/sites/2/2020/02/Desktop.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media (max-width: 600px) {
+    body{
+        background-image: url('https://wallpapers.com/images/hd/whatsapp-chat-background-fb34cc4b2hg9lmix.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat-y;
+    }
+}
