@@ -23,6 +23,11 @@ https://xranus-chatbot.vercel.app/
 ![App Screenshot](https://github.com/Xranus/chatBot/blob/main/thumbnail.png?raw=true)
 
 
+## Limitations
+
+- The answers are can only be 50 words max.
+- There's no memory feature.
+
 ## Feedback
 
 If you have any feedback, please write it down in issues section of this repo.
