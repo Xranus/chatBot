@@ -21,13 +21,14 @@ function App() {
       ...message,
       { type: "userMsg", text: prompt },
     ])
-    
+    const userMsg = prompt
+    setPrompt('')
     const response = await axios({
       url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${process.env.API_KEY}`,
       method: `post`,
       data: {
         "contents": [ 
-          {"parts":[{"text":`${prompt}. Answer in maximum of 50 words`}]}
+          {"parts":[{"text":`${userMsg}. Answer in maximum of 50 words`}]}
         ]
       }
     })
@@ -35,7 +36,7 @@ function App() {
       ...prev,
       { type: "responseMsg", text: response.data.candidates[0].content.parts[0].text }
     ])
-    setPrompt('')
+    
   }
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
