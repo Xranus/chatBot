@@ -25,7 +25,7 @@ https://xranus-chatbot.vercel.app/
 
 ## Limitations
 
-- The answers are can only be 50 words max.
+- The answers can only be 50 words max.
 - There's no memory feature.
 
 ## Feedback
