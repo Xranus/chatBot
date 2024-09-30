@@ -1,5 +1,5 @@
 
-import AOS from 'aos'
+import ReactLoading from 'react-loading'
 import 'aos/dist/aos.css'
 import axios from 'axios'
 import './App.css'
@@ -8,11 +8,15 @@ import TextArea from './components/TextArea'
 
 
 function App() {
-
   const [message, setMessage] = useState([])  
   const [prompt, setPrompt] = useState('')
+  const [loading, setLoading] = useState(false)
   const cRef = useRef(null)
   const hRef = useRef(null)
+  const inputRef = useRef(null)
+  useEffect(()=>{
+    inputRef.current.focus()
+  },[])
   async function generateResponse() {
     if (!prompt.trim()) return
     cRef.current.style = 'display: flex'
@@ -24,6 +28,7 @@ function App() {
     ])
     const userMsg = prompt
     setPrompt('')
+    setLoading(true)
     const response = await axios({
       url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${process.env.API_KEY}`,
       method: `post`,
@@ -33,6 +38,7 @@ function App() {
         ]
       }
     })
+    setLoading(false)
     setMessage((prev)=>[
       ...prev,
       { type: "responseMsg", text: response.data.candidates[0].content.parts[0].text }
@@ -65,8 +71,11 @@ function App() {
             )
           })
         }
+        {
+          loading && (<ReactLoading type={'bubbles'} color={'grey'} height={'10%'} width={'10%'}  className='loading  ' />)
+        }
         </div>
-        <TextArea onChange={(e)=>{setPrompt(e.target.value)}} onClick={generateResponse} value={prompt} onKeyDown={handleKeyPress}/>
+        <TextArea onChange={(e)=>{setPrompt(e.target.value)}} onClick={generateResponse} value={prompt} rref={inputRef} onKeyDown={handleKeyPress}/>
       </div>
     </>
   )

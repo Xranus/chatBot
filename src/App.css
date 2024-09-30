@@ -18,6 +18,7 @@
 .container::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
+
 .heading{
     text-align: center;
     margin-top: 10rem;
