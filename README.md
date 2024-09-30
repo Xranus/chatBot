@@ -1,8 +1,34 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# ChatBot
 
-Currently, two official plugins are available:
+A ChatBot made in react which is based on Google's
+Gemini model.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Acknowledgements
+
+ - [Google's Gemini](https://ai.google.dev/)
+
+
+
+## Demo
+
+You can checkout the live demo
+
+
+
+https://xranus-chatbot.vercel.app/
+## Screenshots
+
+![App Screenshot](https://github.com/Xranus/chatBot/blob/main/thumbnail.png?raw=true)
+
+
+## Feedback
+
+If you have any feedback, please write it down in issues section of this repo.
+
+
+## Authors
+
+- [Muhammad Hassan](https://github.com/Xranus)
+
