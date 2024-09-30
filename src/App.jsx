@@ -3,7 +3,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import axios from 'axios'
 import './App.css'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import TextArea from './components/TextArea'
 
 
@@ -16,6 +16,7 @@ function App() {
   async function generateResponse() {
     if (!prompt.trim()) return
     cRef.current.style = 'display: flex'
+    
     hRef.current.style = 'margin: 2rem'
     setMessage([
       ...message,
@@ -38,6 +39,10 @@ function App() {
     ])
     
   }
+  useEffect(()=>{
+    if(cRef.current)
+    cRef.current.scrollTop = cRef.current.scrollHeight
+  }, [message])
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault()
